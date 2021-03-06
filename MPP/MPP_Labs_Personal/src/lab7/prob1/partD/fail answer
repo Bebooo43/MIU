@@ -1,0 +1,1 @@
+: The following code tracker.get(e).setVisited(true); was broking the logic of the method remuveDuplicates because it was changing the value visited in the object in the HashMap, and this value is used in equals method and hashCode.

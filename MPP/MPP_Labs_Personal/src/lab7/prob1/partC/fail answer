@@ -1,0 +1,1 @@
+HashMap needs method hash Code overridden from Object, and it was missing in the class Employee
