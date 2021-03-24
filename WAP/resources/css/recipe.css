@@ -1,0 +1,36 @@
+body{
+    color: #404040;
+    font-size: 11pt;
+    font-family: Georgia, 'Garamond', serif;
+    background-image: url("../images/silverware.jpg");
+}
+
+h2, h3 { 
+    color: #A4A400;
+    background-color: #F0F0F0;
+    font-family: 'Lucida Sans Unicode', 'Helvetica', 'Arial', sans-serif;
+    text-decoration: underline;
+    letter-spacing: 0.25em;
+    display: table;
+}
+
+pre.quote{
+    font-style: italic;
+    background-color: #FFFFA8;
+}
+
+a{
+    color:  #A4A400;
+}
+
+.underline{ text-decoration: underline;}   
+.line-through{ text-decoration: line-through;}
+.heading{
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+li.pie{
+    list-style-image: url('../images/pie_icon.gif'); 
+}

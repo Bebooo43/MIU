@@ -25,3 +25,12 @@ content: "";
 display: table;
 clear: both;
 }
+
+/* remove underline from links */
+a:link {
+    text-decoration: none;
+}
+
+p::first-letter{
+    font-size: 1.5em;
+}
