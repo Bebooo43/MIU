@@ -1,0 +1,46 @@
+body {
+    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/background.png');
+    margin: 0;
+
+}
+
+
+#divTop{
+    text-align: center;
+    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/bannerbg.png');
+    background-repeat: repeat-x;
+   
+}
+
+div#mainDiv{
+    width: 55%;
+    margin: 0 auto;
+    border: 3px solid gray;
+    border-radius: 12px;
+    display: flex;
+}
+
+div#leftSideDiv{
+}
+
+div#rightSideDiv{
+    width: 34.0%;
+    background-color: #a1b963;
+    float: right;
+}
+
+#lefSideMenu{
+    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/rbg.png');
+    background-repeat: repeat-x;
+    font-size: 5em;;
+    color: red;
+}
+
+p.review{
+    font-style: oblique;
+    font-weight: bold;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: gray;
+    background-color: rgb(245, 222, 202);
+}
