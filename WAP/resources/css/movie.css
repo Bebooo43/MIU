@@ -5,36 +5,45 @@ body {
 }
 
 
-#divTop{
+#divBanner{
     text-align: center;
     background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/bannerbg.png');
     background-repeat: repeat-x;
    
 }
 
-div#mainDiv{
-    width: 55%;
-    margin: 0 auto;
-    border: 3px solid gray;
-    border-radius: 12px;
-    display: flex;
-}
-
-div#leftSideDiv{
-}
-
-div#rightSideDiv{
-    background-color: #a1b963;
-    float: right;
-}
-
-
 #lefSideMenu{
+    border-top-left-radius: 25px;
+    font-size: 5em;
+    color: red;
     background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/rbg.png');
     background-repeat: repeat-x;
-    font-size: 5em;;
-    color: red;
+    height: 83px;
+    overflow: hidden;
 }
+
+#mainDiv{
+    border-radius:25px;
+    border-style: solid;
+    border-color: gray;
+    background-color:lightgreen;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: 97% 3%;
+    width: 55%;
+}
+
+
+
+div#rightSideDiv{
+    overflow: hidden;
+     
+}
+
+#reviews >div{
+    padding: 5px;
+}
+
 
 p.review{
     font-style: oblique;
@@ -46,7 +55,8 @@ p.review{
     padding: 5px;
 }
 
-.reviews{
+#reviews{
+    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/background.png');
     display: grid;
     grid-template-columns: 50% 50%;
 }
@@ -55,11 +65,16 @@ p.review{
     padding: 5px;
 }
 
+p.author >img{
+    vertical-align: middle;
+
+}
+
 #main >div#bottom{
     text-align: center;
 }
 
 #top{
     display:grid;
-    grid-template-columns: 70.5% 29.5%;
+    grid-template-columns: 66.5% 33.5%;
 }
