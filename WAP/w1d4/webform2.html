@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script defer src="../resources/js/webform2.js"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@
                         <input type="text" class="form-control" id="pnumber">
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="qtsStock">Password</label>
+                        <label for="qtsStock">Quantity in Stock</label>
                         <input type="number" class="form-control" id="qtsStock">
                     </div>
                 </div>
@@ -63,7 +65,9 @@
                         <label for="supplier">Supplier</label>
                         <select id="supplier" class="form-control">
                             <option selected value="null">Select a supplier</option>
-                            <option>...</option>
+                            <option>Microsoft</option>
+                            <option>Netflix</option>
+                            <option>Google</option>
                         </select>
                     </div>
                 </div>
@@ -87,7 +91,7 @@
                     <div class="form-group col-md-4" style="text-align: right;">
                         <button type="reset" class="btn btn-outline-info" style="margin-right: 10%;">Reset</button>
                         <button type="button" class="btn btn-outline-danger" style="margin-right: 10%;">Cancel</button>
-                        <button type="submit" class="btn btn-outline-primary" style="text-align: right;">Add Product</button>
+                        <button id="productSubmitBtn" type="submit" class="btn btn-outline-primary" style="text-align: right;">Add Product</button>
                     </div>
                 </div>
             </form>

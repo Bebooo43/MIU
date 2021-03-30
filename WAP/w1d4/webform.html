@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
+    <script defer src="../resources/js/webform.js"></script>
 </head>
 
 <body>
@@ -18,21 +18,21 @@
             <h2>Web Form</h2>
             <form action="post">
                 <div class="form-group">
-                    <label for="email">Email address:</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+                    <label for="loginEmail">Email address:</label>
+                    <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="email" required>
                     <small class="w-100" style="opacity: 50%;">We'll never share you email with anyone else</small>
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}" title="Your password must be at least 10 characters in length and contain at least one number and one uppercase and lowercase letter">
+                    <label for="loginPwd">Password:</label>
+                    <input type="password" class="form-control" id="loginPwd" placeholder="Enter password" name="pwd" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{10,}" required title="Your password must be at least 10 characters in length and contain at least one number and one uppercase and lowercase letter">
                 </div>
                 <div class="checkbox">
                     <label><input type="checkbox" name="remember"> Check me out</label>
                 </div>
                 <div class="form-group">
-                    <input type="url" class="form-control" pattern="https?://.+" title="Please enter a url" name="website" placeholder="Enter a URL"/>
+                    <input id="loginUrl" type="url" class="form-control" pattern="https?://.+" title="Please enter a url" name="website" placeholder="Enter a URL" required/>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button id="loginBtn" type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
     </div>
