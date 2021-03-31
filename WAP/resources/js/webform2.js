@@ -1,6 +1,7 @@
 
- const productSubmitBtn = document.getElementById("productSubmitBtn");
- productSubmitBtn.addEventListener("click", function(){ 
+ const productForm = document.getElementById("productForm");
+ productForm.addEventListener("submit", function(event){ 
+    event.preventDefault();
     const pnumber = document.getElementById("pnumber").value;
     const qtsStock = document.getElementById("qtsStock").value;
     const pname = document.getElementById("pname").value;

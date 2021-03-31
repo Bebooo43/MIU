@@ -7,50 +7,93 @@
     <title>WAP Course</title>
     <link href="./resources/css/style.css" type="text/css" media="screen" rel="stylesheet"/>
     <link rel="icon" href="./resources/images/maharishi-tree.png" type="image" sizes="16x16">
+    
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+        .row.content {height: 100%}
+        
+        /* Set gray background color and 100% height */
+        .sidenav {
+          background-color: #f1f1f1;
+          height: 100%;
+        }
+        
+        /* Set black background color, white text and some padding */
+        footer {
+          background-color: #555;
+          color: white;
+          padding: 15px;
+        }
+        
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 767px) {
+          .sidenav {
+            height: auto;
+            padding: 15px;
+          }
+          .row.content {height: auto;} 
+        }
+      </style>
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row content">
+          <div class="col-sm-2 sidenav">
+            <div style="text-align: center;"> 
+                <img style="border-radius: 50%;" 
+                src="./resources/images/photo.png" 
+                alt="photo profile" width="100%" class="img-fluid"/>
+                <h4>Johnathan Santiago</h4>
+            </div>
+           
+            <ul id="ulMenu" class="nav nav-pills nav-stacked">
+                <li class="active"><a href="">Lab 1 - Home Page</a></li>
+                <li><a href="">Lab 2</a>
+                    <ul>
+                        <li><a href="aboutme.html">About Me</a></li>
+                        <li><a href="./w1d2recipe/index.html">Recipe</a></li>
+                    </ul>
+                </li>
+                <li><a href="tmnt.html">Lab 3 - Movie Review</a></li>
+                <li><a href="">Lab 4</a>
+                    <ul>
+                        <li><a href="./w1d4/webform.html">Web Form 1</a></li>
+                        <li><a href="./w1d4/webform2.html">Web Form 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="./lab5/index.html">Lab 5</a></li>
+                <li><a href="./lab6/decoratemytext.html">Lab 6</a></li>
+            </ul><br>
+          </div>
+      
+          <div class="col-sm-10">
+            <h4><small>Maharishi International University</small></h4>
+            <hr>
+            <h2>WAP - Web Application Programming</h2>
+            <h5><span class="glyphicon glyphicon-time"></span> Obinna Kalu Teacher, Mar 22 - April 17, 2021.</h5>
+            <span class="label label-primary">Drier Building Room 12</span></h5><br>
+            <br>
+            <p>
+                This course provides a systematic introduction to programming interactive and dynamic web applications. The course is intended for individuals with little or no prior web application programming experience. This offering will use Java servlets and JSP for server side processing. The course will introduce HTML and CSS. JavaScript is a focus of the course, and is covered as a functional programming language including jQuery, Ajax, and JavaScript namespaces and modules. It is a prerequisite for the CS545 Web Application Architecture. It does not cover AngularJS or NodeJS, but the JavaScript covered here will prepare you to learn those technologies. (4 units)
+Prerequisite: CS 220 or CS 401 or consent of the department faculty.    
+            </p>
+            <br><br>           
+          </div>
 
-    <img style="border-radius: 50%;" 
-    src="./resources/images/photo.png" 
-    alt="photo profile" width="160"/>
-
-    <h2>Johnathan Santiago</h2>
-
-    <ul id="ulMenu">
-        <li><a href="">Lab 1 - Home Page</a></li>
-        <li><a href="">Lab 2</a>
-            <ul>
-                <li><a href="aboutme.html">About Me</a></li>
-                <li><a href="./w1d2recipe/index.html">Recipe</a></li>
-            </ul>
-        </li>
-        <li><a href="tmnt.html">Lab 3 - Movie Review</a></li>
-        <li><a href="">Lab 4</a>
-            <ul>
-                <li><a href="./w1d4/webform.html">Web Form 1</a></li>
-                <li><a href="./w1d4/webform2.html">Web Form 2</a></li>
-            </ul>
-        </li>
-        <li><a href="./lab5/index.html">Lab 5</a></li>
-        <li><a href="">Lab 8</a></li>
-        <li><a href="">Lab 9</a></li>
-        <li><a href="">Lab 10</a></li>
-        <li><a href="">Lab 11</a></li>
-        <li><a href="">Lab 12</a></li>
-        <li><a href="">Lab 13</a></li>
-        <li><a href="">Lab 14</a></li>
-    </ul>
-
-    <a 
-    href="https://validator.w3.org/nu/?doc=https://johnsales.github.io/MIU/WAP/index.html"> <img 
-    src="./resources/images/validator.png" 
-    alt="html validator"/></a>
-    
-    <!-- Footer -->
-   <footer>
-    <p class="w3-medium"> 
-        &copy; Johnathan Santiago <br /> Maharishi International University
-    </p>
-  </footer>
+           
+          <a href="https://validator.w3.org/nu/?doc=https://johnsales.github.io/MIU/WAP/index.html"> 
+            <img src="./resources/images/validator.png" alt="html validator"/>
+          </a>
+        </div>
+      </div>
+      
+      <footer class="container-fluid">
+        <p style="text-align: center;"> &copy; Johnathan Santiago <br /> Maharishi International University</p>
+      </footer>
 </body>
 </html>
