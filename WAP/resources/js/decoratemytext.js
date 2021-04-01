@@ -68,4 +68,37 @@ window.onload = function(){
         }
     });
 
+ 
+//Q10
+const employee = (function() {
+    let name = '', age = 0, salary = 0.0;
+
+    function getName() {return name;}
+    function getAge() {return age;}
+    function getSalary() {return salary;}
+    
+    const setName = function(newName) {name = newName;}
+    const setAge = function(newAge) {age = newAge;}
+    const setSalary = function(newSalary) {salary = newSalary;}
+
+    return {
+        setName: setName,
+        setAge: setAge,
+        setSalary: setSalary,
+        increaseSalary: function increaseSalary(percentage){ 
+            setSalary(getSalary() + (getSalary()*percentage));//Alternative way : 1 + percentage/100
+        },
+        incrementAge: function incrementAge(){return age = (getAge() + 1);},
+    }
+})();
+
+
+employee.address = '';
+employee.getAddress = function () { return employee.address; };
+employee.setAddress = function (newAddress) { employee.address = newAddress; };
+
+console.log(employee.setAddress('My New Address'));
+console.log(employee.getAddress());
+
+
 }
