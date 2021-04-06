@@ -1,17 +1,17 @@
 window.onload = function(){
     "use strict";
     // put all of your code here
-
+    let biggerDecorationButtonTimer;
     const biggerDecorationButton = document.getElementById("biggerDecorationButton");
     biggerDecorationButton.addEventListener("click",function(event) {
-        function innerFunction() {
+        function changeTextAreaStyle() {
             const textArea = document.getElementById("textAreaId");
             let currentFontSize = textArea.style.fontSize;        
             textArea.style.fontSize = currentFontSize === '' ? 14 + "pt" : (parseInt(currentFontSize) + 2) + "pt";
             textArea.style.textAlign = "right";
             textArea.style.paddingRight = "50px";
         }
-        setInterval(innerFunction,500);
+        biggerDecorationButtonTimer = setInterval(changeTextAreaStyle,500);
     });
 
 
@@ -68,37 +68,28 @@ window.onload = function(){
         }
     });
 
- 
-//Q10
-const employee = (function() {
-    let name = '', age = 0, salary = 0.0;
+    const cancelBiggerDecorationButton = document.getElementById("cancelBiggerDecorationButton");
+    cancelBiggerDecorationButton.addEventListener("click", event => {
+        clearInterval(biggerDecorationButtonTimer);
+    });
 
-    function getName() {return name;}
-    function getAge() {return age;}
-    function getSalary() {return salary;}
     
-    const setName = function(newName) {name = newName;}
-    const setAge = function(newAge) {age = newAge;}
-    const setSalary = function(newSalary) {salary = newSalary;}
+    const count = (()=>{
+        let counter= 0;
+        function add(){
+            counter += 1;
+        }
 
-    return {
-        setName: setName,
-        setAge: setAge,
-        setSalary: setSalary,
-        increaseSalary: function increaseSalary(percentage){ 
-            setSalary(getSalary() + (getSalary()*percentage));//Alternative way : 1 + percentage/100
-        },
-        incrementAge: function incrementAge(){return age = (getAge() + 1);},
-    }
-})();
+        function reset() {
+            counter = 0;
+        }
 
+        return {
+            add:add,
+            reset:reset
+        }
+    })();
 
-employee.address = '';
-employee.getAddress = function () { return employee.address; };
-employee.setAddress = function (newAddress) { employee.address = newAddress; };
-
-console.log(employee.setAddress('My New Address'));
-console.log(employee.getAddress());
 
 
 }

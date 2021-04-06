@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student-Course Registration App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="./js/app.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul id="ulNavItems">
+                <li>
+                    <a id="hyplnkAppBranding" href="./index.html">eRegister<sup>&reg;</sup></a>
+                </li>
+            </ul>
+        </nav>
+        <div id="divHeaderRightContent">
+            <span style="float: right;">Welcome, Student</span>
+        </div>
+    </header>
+    <div id="mainContainer">
+        <main>
+            <h1 id="h1CourseRegForm">Registration Form</h1>
+            <form id="formCourseReg">
+                <fieldset style="border: 0;">
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="txtStudentId">Student ID</label>
+                        </div>
+                        <div class="form-item">
+                            <input class="form-ctrl" type="text" name="txtStudentId" id="txtStudentId" placeholder="000-XXX-XXXX" required autofocus pattern="000-\d{3}-\d{4}">
+                        </div>
+                        <div class="form-item small-instr-text">
+                            <span>Enter your unique student id number.</span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="txtFullName">Full Name</label>
+                        </div>
+                        <div class="form-item">
+                            <input class="form-ctrl" type="text" name="txtFullName" id="txtFullName" placeholder="Enter your Full Name" required>
+                        </div>
+                    </div>  
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="courseId">Course of choice</label>
+                        </div>
+                        <div class="form-item">
+                            <select id="txtCourse" class="form-ctrl" required>
+                                <option selected value="">[Choose a course]</option>
+                                <option value="CS401 - MPP">CS401 - MPP</option>
+                                <option value="CS472 - WAP">CS472 - WAP</option>
+                                <option value="CS425 - SWE">CS425 - SWE</option>
+                              </select>
+                        </div>
+                    </div>   
+                    <div class="form-row">
+                        <input class="btn-std-med" type="submit" value="Submit Registration">
+                    </div>                                     
+                </fieldset>
+            </form>
+            <table id="tblRegistrations">
+                <caption>List of Registrations</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Course of Choice</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>000-61-1101</td>
+                        <td>Anna Lynn Smith</td>
+                        <td>CS472 - WAP</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>000-98-1006</td>
+                        <td>Bob R. Jones</td>
+                        <td>CS401 - MPP</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <footer>
+        <div>
+            <span>
+                CS472-WAP ::: WebApp
+            </span>
+            <span style="float: right;">
+                MIU ::: &copy; April 2021
+            </span>
+        </div>
+    </footer>
+</body>
+</html>

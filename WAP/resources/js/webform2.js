@@ -9,7 +9,11 @@
     const unitPrice = document.getElementById("unitPrice").value;
     const dateSupplied = document.getElementById("dateSupplied").value;
 
-
-    alert("Number: "+pnumber+", Qts Stock: "+qtsStock+", Name: "+pname+
-        ", Supplier: "+supplier+", Unit Price: "+unitPrice+", Date Supplied: "+dateSupplied);
- });
+    const stringForm = "Number: "+pnumber+", Qts Stock: "+qtsStock+", Name: "+pname+
+        ", Supplier: "+supplier+", Unit Price: "+unitPrice+", Date Supplied: "+dateSupplied;
+    
+    alert(stringForm);
+    
+    let block = document.getElementById("block");
+    block.innerText = stringForm;
+});

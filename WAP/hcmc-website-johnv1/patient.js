@@ -1,7 +1,7 @@
 var selectedRow = null
 var patientTable = document.getElementById("patientTable").getElementsByTagName('tbody')[0];
 
-var initialArrayGlobal;
+var initialArrayGlobal = loadData();
 
 function loadData() {
     let patient1 = { "patientId": 1, "nameId": "John", "midNameId": "M", "lastNameId": "Santiago","dateBirthId": new Date('1992-02-03'),"departmentId": "D 1","outPatient": "Yes"};
@@ -14,32 +14,24 @@ function loadData() {
     initialArray.forEach(element => {
         insertNewRecord(element);
     });
-    
-    initialArrayGlobal = initialArray;
+    return initialArray;
 }
 
-loadData();
 
 const outPatientOnlyCheck = document.getElementById("outPatientOnlyCheck");
 outPatientOnlyCheck.addEventListener('change', function(event) {
-    event.preventDefault();
-   
-    const tr = patientTable.getElementsByTagName("tr");
     
-    for (let i = 0; i < tr.length; i++) {
-        
-        let td = tr[i].getElementsByTagName("td")[6];//outPatient
+    let filteredArray = initialArrayGlobal;
+    clearTable();
 
-        if(this.checked && td.textContent === "No"){
-            tr[i].style.display = "none";
-        }else{
-            tr[i].style.display = "";
-        }
-    }       
-   
+    if(this.checked) 
+        filteredArray = filteredArray.filter(e => e.outPatient === "Yes");
+    
+    filteredArray.forEach(element => {
+        insertNewRecord(element);
+    });
+    
 });
-
-
 
 const patientForm = document.getElementById("patientForm");
 patientForm.addEventListener('submit', function(event) {
@@ -51,7 +43,6 @@ patientForm.addEventListener('submit', function(event) {
     else
         updateRecord(formData);
     resetForm();
-    
 });
 
 function readFormData() {
@@ -69,7 +60,7 @@ function readFormData() {
 }
 
 function insertNewRecord(data) {
-    var newRow = patientTable.insertRow(patientTable.length);
+    var newRow = patientTable.insertRow(patientTable.length);//-1 works too
     
     const cell1 = newRow.insertCell(0);
     cell1.innerText = data.patientId;
@@ -96,14 +87,23 @@ function resetForm() {
     document.getElementById("lastNameId").value = '';
     document.getElementById("dateBirthId").value = '';
     document.getElementById("departmentId").value = '';
-    document.querySelector('input[name="outPatient"]:checked').value = '';
+
+    if(document.querySelector('input[name="outPatient"]:checked') != null)
+        document.querySelector('input[name="outPatient"]:checked').value = '';
     selectedRow = null;
 }
 
-function onDelete(td) {
+function onDelete(a) {
     if (confirm('Are you sure to delete this record ?')) {
-        row = td.parentElement.parentElement;
-        document.getElementById("employeeList").deleteRow(row.rowIndex);
+        let row = a.parentElement.parentElement;//a -> td -> tr
+        document.getElementById("patientTable").deleteRow(row.rowIndex);
         resetForm();
+    }
+}
+
+function clearTable(){
+    let table = document.getElementById("patientTable");
+    for (let i = table.rows.length-1; i >0; i--) {
+        table.deleteRow(i);
     }
 }

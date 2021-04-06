@@ -9,6 +9,10 @@
     padding: 25px;
   }
 
+  a{
+      cursor: pointer
+  }
+
   #id2{
       float: right;
   }
