@@ -79,14 +79,15 @@ console.log(peter.toString());
 
 
 //Question 4
-$("#loginForm").submit(function(event) {
+console.log('#Question 4  \n');
+/*$("#loginForm").submit(function(event) {
     event.preventDefault();
     const loginEmail = document.getElementById("loginEmail").value;
     const loginPwd = document.getElementById("loginPwd").value;
     const loginUrl = document.getElementById("loginUrl").value;
  
     console.log("Email: "+loginEmail+", Pwd: "+loginPwd+", Url: "+loginUrl);
- });
+});*/
 
 /*
 Question 2 version 1
