@@ -14,9 +14,11 @@ loginForm.addEventListener("submit", function(event){
  //using JQuery Lab9 question 4
 $("#loginForm").submit(function(event) {
    event.preventDefault();
-   const loginEmail = document.getElementById("loginEmail").value;
-   const loginPwd = document.getElementById("loginPwd").value;
-   const loginUrl = document.getElementById("loginUrl").value;
+   const loginEmail = $("#loginEmail");
+   const loginPwd = $("#loginPwd");
+   const loginUrl = $("#loginUrl");
 
-   console.log("Email: "+loginEmail+", Pwd: "+loginPwd+", Url: "+loginUrl);
+   console.log("Email: "+loginEmail.val()+", Pwd: "+loginPwd.val()+", Url: "+loginUrl.val());
 });
+
+

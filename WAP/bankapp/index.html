@@ -68,11 +68,11 @@
             <select id="typeAccount" class="form-control" required>
               <option selected value="">Choose...</option>
               <option value="Checking">Checking</option>
-              <option value="Saving">Saving</option>
-              <option value="Load">Saving</option>
+              <option value="Savings">Savings</option>
+              <option value="Load">Load</option>
             </select>
         </div>
-        <button type="submit" class="btn btn-primary">Create New Account</button>
+        <button type="submit" class="btn btn-primary" id="accountSubmitButton">Create New Account</button>
       </form>
     </div>
 </div>
@@ -88,8 +88,14 @@
 -->
 <!--List using table-->
 <div class="row">
-  <div class="col-sm-6">
-  <table class="table table-striped" id="bancAccountTable">
+  <div class="col-sm-6" id="divTable">
+
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" id="savingsOnly" value="savingsOnly">
+    <label class="form-check-label" for="savingsOnly">Savings only</label>
+  </div>
+
+  <table class="table table-striped" id="bankAccountTable">
     <thead>
       <tr>
         <th scope="col">#</th>

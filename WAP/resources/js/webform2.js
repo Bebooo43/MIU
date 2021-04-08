@@ -1,4 +1,7 @@
 
+/* 
+#Without JQuery
+
  const productForm = document.getElementById("productForm");
  productForm.addEventListener("submit", function(event){ 
     event.preventDefault();
@@ -16,4 +19,19 @@
     
     let block = document.getElementById("block");
     block.innerText = stringForm;
-});
+});*/
+
+$("#productForm").submit(function(event){ 
+    event.preventDefault();
+    const pnumber = $("#pnumber").val();
+    const qtsStock = $("#qtsStock").val();
+    const pname = $("#pname").val();
+    const supplier = $("#supplier").val();
+    const unitPrice = $("#unitPrice").val();
+    const dateSupplied = $("#dateSupplied").val();
+
+    const stringForm = "Number: "+pnumber+", Qts Stock: "+qtsStock+", Name: "+pname+
+        ", Supplier: "+supplier+", Unit Price: "+unitPrice+", Date Supplied: "+dateSupplied;
+    
+    $("#block").text(stringForm);
+ });

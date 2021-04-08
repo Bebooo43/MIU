@@ -1,4 +1,88 @@
+"use strict";
 var selectedRow = null
+const bankAccountForm = $("#bankAccountForm");
+const bankAccountTable = $('#bankAccountTable');
+$("#numberAccount").focus();
+
+function readFormData() {
+    var formData = {};
+    formData["idAccount"] = $("#idAccount").val();
+    formData["numberAccount"] = $("#numberAccount").val();
+    formData["cName"] = $("#cName").val();
+    formData["typeAccount"] = $("#typeAccount").val();
+    return formData;
+}
+
+bankAccountForm.submit(function(event) {
+    event.preventDefault();
+
+    const formData = readFormData();
+    if (selectedRow == null)
+        addNewAccountDataRow(formData);
+    else
+        updateAccountRecord(formData);
+    //clean form
+    resetForm();
+    $("#numberAccount").focus();
+});
+
+ //Solution using table provided by kalu 
+ const addNewAccountDataRow = function(data) {
+    bankAccountTable.append('<tr>'+
+        '<td>' + $('#bankAccountTable tr').length + '</td>'+
+        '<td>' + data.numberAccount + '</td>'+
+        '<td>' + data.cName + '</td>'+
+        '<td id="tdTypeAccount">' + data.typeAccount + '</td>'+
+        '<td> <a onClick="onEdit(this)"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp&nbsp<a onClick="onDelete(this)"><span class="glyphicon glyphicon-trash"></span></a>` </td>'+
+    '</tr>');
+    
+    selectedRow == null;
+}
+
+function onDelete(a) {
+    if (confirm('Are you sure to delete this record ?')) {
+        $(a).closest('tr').remove();
+        resetForm();
+    }
+}
+
+function onEdit(a) {
+    selectedRow = $(a).parent().closest('tr');
+    $("#idAccount").val($(selectedRow.children()[0]).text());
+    $("#numberAccount").val($(selectedRow.children()[1]).text());
+    $("#cName").val($(selectedRow.children()[2]).text());
+    $("#typeAccount").val($(selectedRow.children()[3]).text());
+
+    $("#accountSubmitButton").html('Update Account').button('refresh');
+
+}
+
+function updateAccountRecord(formData) {  
+    $(selectedRow.children()[0]).text(formData.idAccount);
+    $(selectedRow.children()[1]).text(formData.numberAccount);
+    $(selectedRow.children()[2]).text(formData.cName);
+    $(selectedRow.children()[3]).text(formData.typeAccount);
+    $("#accountSubmitButton").html('Create New Account').button('refresh');
+}
+
+function resetForm() {
+    bankAccountForm[0].reset();
+    selectedRow = null;
+}
+
+$("#savingsOnly").change(function(event) {
+    if(this.checked){ 
+        $("#bankAccountTable tbody > tr").filter(function() {
+            $(this).toggle($(this).find('#tdTypeAccount').text().toLowerCase().indexOf("savings") > -1)
+        });
+    }else{
+        $("#bankAccountTable tbody > tr").show();
+    }
+});
+
+/**
+    #Plain-vanilla DOM Web API
+ 
 const bankAccountForm = document.getElementById("bankAccountForm");
 
 function readFormData() {
@@ -23,12 +107,9 @@ bankAccountForm.addEventListener("submit", function(event) {
     resetForm();
 });
 
-
-/**
- * Solution using table provided by kalu
- */
+ //Solution using table provided by kalu 
  const addNewAccountDataRow = function(data) {
-    const tblAccounts = document.querySelector("#bancAccountTable");
+    const tblAccounts = document.querySelector("#bankAccountTable");
     const newRow = tblAccounts.insertRow(-1);
 
     //inserting ID on column 1
@@ -62,7 +143,7 @@ bankAccountForm.addEventListener("submit", function(event) {
 function onDelete(a) {
     if (confirm('Are you sure to delete this record ?')) {
         let row = a.parentElement.parentElement;//a -> td -> tr
-        document.getElementById("bancAccountTable").deleteRow(row.rowIndex);
+        document.getElementById("bankAccountTable").deleteRow(row.rowIndex);
         resetForm();
     }
 }
@@ -95,4 +176,5 @@ function resetForm() {
     newValue.classList.add("list-group-item");
     newValue.appendChild(document.createTextNode(numberAccount +" | "+cName+" | "+typeAccount));
     list.appendChild(newValue);
-    */
+*/
+    

@@ -1,18 +1,27 @@
 import {Person} from "./person.js"
 
 export class Employee extends Person{
+
+    //private fields declarations (Encapsulation)
+    #salary = 0.0;
+    #hireDate = null;
+
     constructor(name, dateOfBirth, salary, hireDate){
         super(name,dateOfBirth);
-        this.salary = salary;
-        this.hireDate = hireDate;
+        this.#salary = salary;
+        this.#hireDate = hireDate;
     }
 
     //GETs and SETs
-    get salary(){return this._salary;}
-    get hireDate(){return this._hireDate;}
+    get salary(){return this.#salary;}
+    get hireDate(){return this.#hireDate;}
 
-    set salary(newSalary){this._salary = newSalary;}
-    set hireDate(newHireDate){this._hireDate = newHireDate;}
+    set salary(newSalary){this.#salary = newSalary;}
+    set hireDate(newHireDate){this.#hireDate = newHireDate;}
+
+    doJob(jobTitle) { 
+        console.log(`${super.name} is a ${jobTitle} who earns ${salaryFormatter.format(this.salary)}`);
+    };
 }
 
 const salaryFormatter = new Intl.NumberFormat('en-US', {
@@ -20,5 +29,3 @@ const salaryFormatter = new Intl.NumberFormat('en-US', {
     currency: 'USD',
     minimumFractionDigits: 2
 });
-
-Employee.prototype.doJob = function(jobTitle) {console.log(`${this.name} is a ${jobTitle} who earns ${salaryFormatter.format(this.salary)}`);};
