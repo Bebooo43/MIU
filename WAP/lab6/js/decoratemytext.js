@@ -58,7 +58,7 @@ window.onload = function(){
             textArea.style.fontWeight = "bold";
             textArea.style.color = "green";
             textArea.style.textDecoration = "underline";
-            document.body.style.backgroundImage = "url(../resources/images/hundredDollar.jpg)";
+            document.body.style.backgroundImage = "url(./images/hundredDollar.jpg)";
 
         }else{
             textArea.style.fontWeight = "";

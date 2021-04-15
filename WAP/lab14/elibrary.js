@@ -80,3 +80,5 @@ saveButton.addEventListener("click", function(event) {
         console.error(error);
     });
 });
+
+//based on kalu github: https://github.com/obkalu/elibrary-spa/blob/master/js/elibrary.js

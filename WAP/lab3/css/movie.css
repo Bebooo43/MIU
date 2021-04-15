@@ -1,5 +1,5 @@
 body {
-    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/background.png');
+    background-image: url('../images/background.png');
     margin: 0;
 
 }
@@ -7,7 +7,7 @@ body {
 
 #divBanner{
     text-align: center;
-    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/bannerbg.png');
+    background-image: url('../images/bannerbg.png');
     background-repeat: repeat-x;
    
 }
@@ -16,7 +16,7 @@ body {
     border-top-left-radius: 25px;
     font-size: 5em;
     color: red;
-    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/rbg.png');
+    background-image: url('../images/rbg.png');
     background-repeat: repeat-x;
     height: 83px;
     overflow: hidden;
@@ -56,7 +56,7 @@ p.review{
 }
 
 #reviews{
-    background-image: url('../../TMNT\ -\ Rancid\ Tomatoes_files/background.png');
+    background-image: url('../images/background.png');
     display: grid;
     grid-template-columns: 50% 50%;
 }
