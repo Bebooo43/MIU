@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="John Santiago">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" type="text/css" href="style.css">-->
+    <title>Lab 14 - CS472-WAP</title>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">CS472-WAP <sup>&reg;</sup> ::: Lab 14</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Books</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span style="color:#fff;padding-left: 2em; padding-right: 1em;">Welcome, Guest</span>
+            </form>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Welcome to Lab 14</h1>
+                <br>
+                <p>You will make use of AJAX and JSON to implement the application as a decoupled client-server,  service-oriented architecture. Meaning, your webapp client will be separate from the backend RESTful service (which is already implemented and provided for your use).
+
+                    The following RESTful service endpoint urls are available to your LibraryBooks management webapp:
+
+                    <a href="https://elibraryrestapi.herokuapp.com/elibrary/api/book/list">https://elibraryrestapi.herokuapp.com/elibrary/api/book/list</a> : Presents JSON formatted data containing list of books in and array.
+
+                    <a href="https://elibraryrestapi.herokuapp.com/elibrary/api/book/add">https://elibraryrestapi.herokuapp.com/elibrary/api/book/add</a> : Adds a new book to the collection.
+
+                    Take screenshots of your webapp (see examples attached) and include in your submission to Sakai or github repo.
+
+                    Task2 - (Optional): Consider working on implementing solution to the Exercise given on Slide 39 of the Lesson (AJAX, JSON, REST...)  pdf slides.
+                
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="container-fluid">
+        <div>
+            <span style="margin-left: 1em;">John Santiago ::: CS472-WAP</span>
+            <span style="float: right;margin-right: 1em;">&copy; April 2021</span>
+        </div>
+    </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
+</body>
+</html>

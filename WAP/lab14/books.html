@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="author" content="John Santiago">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Lab 14 - Books</title>
+    <style>
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+
+        /* Add a gray background color and some padding to the footer */
+        footer {
+            background-color: #f2f2f2;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="index.html">CS472-WAP <sup>&reg;</sup> ::: Lab 14</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="books.html">Books</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <span style="color:#fff;padding-left: 2em; padding-right: 1em;">Welcome, Guest</span>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+    <br>
+    <div class="row" style="padding-bottom:1em;">
+        <div class="col-md-4">
+            <h3 style="font-size: 2em; color: #32a5e7;">Books in our Collection</h3>
+        </div>
+        <div class="col-md-8 text-right">
+            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal" data-whatever="addnewbook">Add New Book</button>
+        </div>
+    </div>
+
+    <!-- Modal Add-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Book Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <span><b>Note:</b> Form fields marked with asterisk (*) are required.</span>
+                </div>
+                <br/>
+                <form id="bookForm">
+                    <div class="form-group">
+                        <label for="title" class="col-form-label">*Book Title:</label>
+                        <input type="text" class="form-control" id="title" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="isbn" class="col-form-label">*ISBN:</label>
+                            <input type="text" class="form-control" id="isbn">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="overdue-fee" class="col-form-label">*Overdue Fee per day:</label>
+                            <input type="number" class="form-control" id="overdue-fee">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="publisher" class="col-form-label">*Publisher:</label>
+                            <input type="text" class="form-control" id="publisher">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="date-published" class="col-form-label">*Date Published:</label>
+                            <input type="date" class="form-control" id="date-published" required>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeModalButton">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" id="saveModalButton">Save Book</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- List of Books -->
+    <div id="divBooksList" style="font-size: 1em">
+        <div class="alert alert-success alert-dismissible fade" role="alert" id="book-added-alert">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            Book successfully added!
+        </div>
+        <table id="booksTable" class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">Book Title</th>
+                <th scope="col">Overdue Fee</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Date Published</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            <!--<tr><td style="text-align:center;" colspan="8">Loading...</tr>-->
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+    <footer class="container-fluid">
+        <div>
+            <span style="margin-left: 1em;">John Santiago ::: CS472-WAP</span>
+            <span style="float: right;margin-right: 1em;">&copy; April 2021</span>
+        </div>
+    </footer>
+    
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>    
+    <script src="elibrary.js"></script>
+</body>
+</html>

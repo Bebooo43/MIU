@@ -1,0 +1,22 @@
+/* -- elibrary.css -- */
+
+@charset "utf-8";
+
+html {
+    min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height + extra 50px gap */
+    margin-bottom: 100px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 50px;
+    line-height: 50px; /* Vertically center the text there */
+    background-color: #f5f5f5;
+}
