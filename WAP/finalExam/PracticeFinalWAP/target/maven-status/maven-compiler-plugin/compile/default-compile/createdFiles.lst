@@ -1,0 +1,6 @@
+edu\miu\cs\PracticeFinalWAP\model\Product.class
+edu\miu\cs\PracticeFinalWAP\model\Supplier.class
+edu\miu\cs\PracticeFinalWAP\service\ProductService.class
+edu\miu\cs\PracticeFinalWAP\controller\ProductController.class
+edu\miu\cs\PracticeFinalWAP\controller\HomeServlet.class
+edu\miu\cs\PracticeFinalWAP\repository\SRMRepository.class

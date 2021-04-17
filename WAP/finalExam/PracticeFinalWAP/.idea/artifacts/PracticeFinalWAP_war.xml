@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="PracticeFinalWAP:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>PracticeFinalWAP</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="PracticeFinalWAP-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="PracticeFinalWAP:war exploded" />
+    </root>
+  </artifact>
+</component>
