@@ -18,11 +18,11 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>edu.miu.cs.cs544</groupId>
-			<artifactId>hibernate-shared</artifactId>
-			<version>${project.version}</version>
-		</dependency>
+	<dependency>
+		<groupId>edu.miu.cs.cs544</groupId>
+		<artifactId>hibernate-shared</artifactId>
+		<version>${project.version}</version>
+	</dependency>
 	</dependencies>
 
 	<build>

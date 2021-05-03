@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 
 import edu.miu.cs.cs544.examples.HibernateUtils;
 
+
 public class App {
 
 	private static final SessionFactory sessionFactory;
