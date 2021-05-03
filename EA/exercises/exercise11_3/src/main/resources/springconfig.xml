@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+ <bean id="bookService" class="cs544.exercise11_3.BookService" >
+	<property name="suppliers">
+		 <list>
+			 <ref bean="shipper1"/> 
+			 <ref bean="shipper2"/> 
+			 <ref bean="shipper3"/> 
+			 <ref bean="shipper4"/> 
+		 </list>
+	 </property>
+</bean>
+
+<bean id="shipper1" class="cs544.exercise11_3.EBooks">
+</bean>
+<bean id="shipper2" class="cs544.exercise11_3.Amazon">
+</bean>  
+<bean id="shipper3" class="cs544.exercise11_3.BarnesAndNoble">  	
+</bean>
+<bean id="shipper4" class="cs544.exercise11_3.Borders">  	
+</bean>
+
+
+</beans> 

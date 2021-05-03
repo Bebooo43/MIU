@@ -1,0 +1,71 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xmlns:tx="http://www.springframework.org/schema/tx"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd
+   http://www.springframework.org/schema/tx
+   http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+   <context:annotation-config/>
+  
+   <!-- bean definitions go here -->
+   <bean id="studentService" class="cs544.exercise17_1.StudentService">
+   	<property name="studentDAO" ref="studentDAO"/>
+   </bean>
+   
+   <bean id="studentsCourseServlet" class="cs544.exercise17_1.StudentsCourseServlet"/>
+   
+   <bean id="studentDAO" class="cs544.exercise17_1.StudentDAO">
+   	 <property name="sessionFactory" ref="sessionFactory" />
+   </bean> 
+   <bean id="student" class="cs544.exercise17_1.Student"/> 
+   <bean id="course" class="cs544.exercise17_1.Course"/>
+   <bean id="openSessionInViewFilter" class="cs544.exercise17_1.OpenSessionInViewFilter"/>
+   
+   
+   
+   
+   
+  <tx:annotation-driven transaction-manager="txManager" />
+  <bean id="txManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+  	<property name="sessionFactory" ref="sessionFactory"/>
+  </bean>
+  
+   
+   <!-- Hibernate and Spring Integration Setup -->
+   <bean id="sessionFactory"  class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+   		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties" ref="hibernateProperties" />
+		<property name="annotatedClasses">
+		<list>
+			<value>cs544.exercise17_1.Student</value>
+			<value>cs544.exercise17_1.Course</value>
+		</list>
+		</property>
+   </bean>
+   
+   <bean id="dataSource"  class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+ 		<property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+ 		<property name="url" value="jdbc:sqlserver://10.10.10.15:1433;database=611923;"/>
+ 		<property name="username" value="611923"/>
+ 		<property name="password" value="313697"/>
+   </bean>
+   
+   <bean id="hibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+	<property name="properties">
+		<props>
+			<prop key="hibernate.hbm2ddl.auto">create-drop</prop>
+			<prop key="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</prop>
+			<prop key="connection.pool.size">5</prop>
+			<prop key="hibernate.show_sql">true</prop>
+			<!-- <prop key="hibernate.current_session_context_class">thread</prop>  -->
+		</props>
+	</property>
+   </bean>
+  
+</beans>

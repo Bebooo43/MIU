@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+         
+    <welcome-file-list>
+        <welcome-file>StudentsCourseServlet</welcome-file>
+    </welcome-file-list>
+    <filter>
+        <filter-name>OpenSessionInViewFilter</filter-name>
+        <filter-class>cs544.exercise17_1.OpenSessionInViewFilter</filter-class>
+        <!--<filter-class>org.springframework.orm.hibernate3.support.OpenSessionInViewFilter</filter-class>
+        -->
+        
+    </filter>
+    <filter-mapping>
+        <filter-name>OpenSessionInViewFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>StudentsCourseServlet</servlet-name>
+        <servlet-class>cs544.exercise17_1.StudentsCourseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StudentsCourseServlet</servlet-name>
+        <url-pattern>/StudentsCourseServlet</url-pattern>
+    </servlet-mapping>
+    
+    <context-param>
+	 <param-name>contextConfigLocation</param-name>
+	 <param-value>/WEB-INF/springconfig.xml</param-value>
+	 </context-param>
+	 <listener>
+	 <listener-class>
+	 org.springframework.web.context.ContextLoaderListener
+	 </listener-class>
+	 </listener>
+</web-app>

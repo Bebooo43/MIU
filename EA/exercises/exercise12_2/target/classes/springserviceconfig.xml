@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:context = "http://www.springframework.org/schema/context"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+   <context:annotation-config/>
+   
+   <!-- imports -->
+   <import resource="springdaoconfig.xml"/>
+   <import resource="springjmsconfig.xml"/>
+   
+   <!-- bean definitions go here -->
+   <bean id="accountService" class="cs544.exercise12_1.bank.service.AccountService" />
+   <bean id="currencyConverter" class="cs544.exercise12_1.bank.service.CurrencyConverter" />
+   <bean id="logger" class="cs544.exercise12_1.bank.logging.Logger" />
+   
+</beans>
