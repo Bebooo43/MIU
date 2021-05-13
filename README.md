@@ -3,7 +3,7 @@ All code made in the master course at Maharishi University
 
 [Courses](https://compro.miu.edu/courses/) 
 
-###On Campus
+My On Campus Courses
 
 * CS 401 Modern Programming Practices - MPP (Java programming)
 * CS472 Web Programming - WAP
@@ -11,7 +11,7 @@ All code made in the master course at Maharishi University
 * CS435 Algorithms - ALG
 * CS 525 Advanced Software Development - ASD
 
-###DE (Distance Education)
+My DE Courses (Distance Education)
 
 * CS 488 Big Data Analytics (Data Science)
 * CS 522 Big Data (Data Science)
