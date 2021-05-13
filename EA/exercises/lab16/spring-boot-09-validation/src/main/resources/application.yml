@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-boot-09-validation
+  datasource:
+    url: jdbc:postgresql://ec2-3-217-219-146.compute-1.amazonaws.com:5432/dcmoqgtmdhc8uj
+    username: ogcylduovysypi
+    password: 09c948909eb8bafccf7ee4d969f05ce112d4b2fc5f0bc530dfd01aa3181cdf91
+    driverClassName: org.postgresql.Driver
+    initialization-mode: always
+    hikari:
+      maximumPoolSize: 10
+  jpa:
+    show-sql: true
+    hibernate:      
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+logging:
+  file:
+    name: /Coding/Logging/${spring.application.name}/log
+server:
+  port: 8009

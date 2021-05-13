@@ -1,0 +1,27 @@
+server:
+  port: 80
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/cs544
+    username: john
+    password: john
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+spring.jpa.hibernate.ddl-auto: create
+
+#to expose all endpoints through the Web APIs - actuator
+management.endpoints.web.exposure.include: "*"
+
+#useful strings for email service
+#link: https://www.tutorialspoint.com/spring_boot/spring_boot_sending_email.htm
+emailProducer: user.email.cs544@gmail.com
+passwordEmailProducer: User12345

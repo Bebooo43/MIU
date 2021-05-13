@@ -1,0 +1,17 @@
+spring: 
+  application:
+    name: lab15
+  datasource:
+    url: jdbc:sqlserver://127.0.0.1:1433;databaseName=611923
+    username: sa
+    password: sa
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2008Dialect

@@ -1,0 +1,77 @@
+###Security, Email Service, Deployment, *show cancel appointment use case
+
+######   PROVIDER   #######
+
+### provider creating session
+POST http://localhost/provider/sessions
+Authorization: Basic provider 1234
+Content-Type: application/json
+
+{
+        "date": "2021-05-20",
+        "startTime": "11:00:00",
+        "duration": 120,
+        "location": "Verill Hall"
+}
+
+### approve appointment
+PUT localhost/provider/appointments/1
+Authorization: Basic provider 1234
+
+### Get sessions by provider
+GET http://localhost/provider/sessions
+Authorization: Basic provider 1234
+Accept: application/json
+
+### get available (future and no approved)
+GET http://localhost/provider/sessions/available
+Authorization: Basic provider 1234
+Accept: application/json
+
+### get session (belonging to provider) by id
+GET localhost/provider/sessions/3
+Authorization: Basic provider 1234
+Accept: application/json
+
+
+######   ADMIN   #######
+
+### approve appointment
+PUT localhost/admin/appointments/1
+Authorization: Basic admin 1234
+
+### patch session
+PATCH localhost/admin/sessions/1
+Authorization: Basic admin 1234
+Content-Type: application/json
+
+{
+  "location": "Library"
+}
+
+### Get all sessions available
+GET localhost/admin/sessions/available
+Authorization: Basic admin 1234
+Accept: application/json
+
+### Get all sessions
+GET localhost/admin/sessions
+Authorization: Basic admin 1234
+Accept: application/json
+
+
+######   CLIENT   #######
+### cancel appointment
+DELETE localhost/client/appointments/1
+Authorization: Basic client 1234
+
+### Make an appointment
+POST localhost/client/appointments
+Authorization: Basic client 1234
+Content-Type: application/json
+
+{"session_id": 2}
+
+### Get all appointments
+GET localhost/client/appointments
+Authorization: Basic client 1234

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>EA Exam</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script defer src="index.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    a{
+      cursor: pointer
+    }
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      height: 100px; 
+      margin-bottom: -100px;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">CS544 ::: EA</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+ 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+    <h3>Testing Endpoints
+
+      <!--<a href="project.pdf" target="_blank" title="Assignment"> 
+        <img alt="PDF" src="pdf.png" width="30" height="">
+      </a>-->
+      <br><br>
+      <p>Because of Spring Security, you need to put the Basic HTTP Authentication the respective uses, accordingly with the service</p>
+	<ul>
+		<li>
+    <pre>
+    ### update session
+    PATCH https://cs544-project.herokuapp.com/admin/sessions/1
+    Authorization: Basic admin 1234
+    Content-Type: application/json
+    
+    {
+      "location": "Library"
+    }
+    </pre>
+    </li>
+		<li>
+      <pre>
+        
+    ### get session (belonging to provider) by id
+    GET https://cs544-project.herokuapp.com/provider/sessions/3
+    Authorization: Basic provider 1234
+    Accept: application/json
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+    ### approve appointment
+    PUT https://cs544-project.herokuapp.com/provider/appointments/1
+    Authorization: Basic provider 1234
+      </pre>
+    </li>
+		<li>
+      <pre>
+    ### get available (future and no approved)
+    GEThttps://cs544-project.herokuapp.com/provider/sessions/available
+    Authorization: Basic provider 1234
+    Accept: application/json
+      </pre>
+    </li>
+		<li>
+      <pre>
+        
+      ### provider creating session
+      POST https://cs544-project.herokuapp.com/provider/sessions
+      Authorization: Basic provider 1234
+      Content-Type: application/json
+
+      {
+              "date": "2021-05-20",
+              "startTime": "11:00:00",
+              "duration": 120,
+              "location": "Verill Hall"
+      }
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        
+### Get sessions by provider
+GET https://cs544-project.herokuapp.com/provider/sessions
+Authorization: Basic provider 1234
+Accept: application/json
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        ###
+GET https://cs544-project.herokuapp.com/admin/sessions/available
+Authorization: Basic admin 1234
+Accept: application/json
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        ### Get all sessions
+GET https://cs544-project.herokuapp.com/admin/sessions
+Authorization: Basic admin 1234
+Accept: application/json
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        ### approve appointment
+PUT https://cs544-project.herokuapp.com/admin/appointments/1
+Authorization: Basic admin 1234
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        ### cancel appointment
+DELETE https://cs544-project.herokuapp.com/client/appointments/1
+Authorization: Basic client 1234
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        
+### Make an appointment
+POST https://cs544-project.herokuapp.com/client/appointments
+Authorization: Basic client 1234
+Content-Type: application/json
+
+{"session_id": 2}
+
+      </pre>
+    </li>
+		<li>
+      <pre>
+        ### Get all appointments
+GET https://cs544-project.herokuapp.com/client/appointments
+Authorization: Basic client 1234
+
+      </pre>
+    </li>
+		
+	
+
+
+
+
+
+
+
+
+		
+		
+		
+		
+		
+	</ul>
+    </h3><br>
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <p>CS544 Bank ::: EA</p>
+</footer>
+
+</body>
+</html>
