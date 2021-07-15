@@ -1,0 +1,9 @@
+Imagine that we wish to add a generic Visitor to the Composite Pattern (assume Transparent design
+which means both Composite and Leaf have to implement the accept method). Through this
+method, we wish to achieve a flexible way to pass behavior to be applied to every member of the
+aggregate in Composite (the technical term for it is: Internal Iterator).
+
+1. a) Write a Visitor that would collect the elements of the composite tree
+in a collection as it visits all the elements of the aggregate.
+2. b) Using the above visitor in (a) and by applying it to the node in
+question, you can easily obtain an Iterator to the sub-tree.
