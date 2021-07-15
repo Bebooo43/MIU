@@ -56,7 +56,7 @@ Cs525: Project 2
 
 ### Class Diagram
 <p>
-    <img src="images/class-diagram.png" alt="Logo" width="500" height="500">
+    <img src="images/class-diagram.png" alt="Logo" width="1000" height="500">
 </p>
 
 ### Design Patterns
