@@ -6,16 +6,14 @@ All code made in the master course at Maharishi University
 My On Campus Courses
 
 * CS 401 Modern Programming Practices - MPP (Java programming)
-* CS472 Web Programming - WAP
-* CS544 Enterprise Architecture - EA
-* CS435 Algorithms - ALG
+* CS 472 Web Programming - WAP
+* CS 544 Enterprise Architecture - EA
+* CS 435 Algorithms - ALG
 * CS 525 Advanced Software Development - ASD
 
 My DE Courses (Distance Education)
 
-* CS 488 Big Data Analytics (Data Science)
-* CS 522 Big Data (Data Science)
-* CS 523 Big Data Technologies (Data Science)
-* CS 582 - Machine Learning (Data Science) 
-######
-* CS 590 Software Architecture - SA (Check avaiability and swap)
+* CS 545 Web Application Architecture and Frameworks - WAA
+* CS 422 Database Management Systems - DBMS
+* CS 590 Software Architecture - SA
+* CS 425 Software Engineering - SE
